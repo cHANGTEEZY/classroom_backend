@@ -10,7 +10,7 @@ const timestamps = {
 };
 
 export const departments = pgTable("departments", {
-  id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
+  id: integer("id").primaryKey().generatedAlwaysAsIdentity(), //generatedAlwaysAsIdentity() is used to create an auto-incrementing primary key
   code: varchar("code", { length: 50 }).notNull().unique(),
   name: varchar("name", { length: 255 }).notNull(),
   description: varchar("description", { length: 500 }),
